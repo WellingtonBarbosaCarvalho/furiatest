@@ -1,0 +1,556 @@
+/* register.css - Estilos específicos para a página de cadastro */
+
+:root {
+  --furia-black: #000000;
+  --furia-gray: #1a1a1a;
+  --furia-white: #ffffff;
+  --furia-blue: #00a1ff;
+  --furia-highlight: #18e7ff;
+  --gradient-primary: linear-gradient(135deg, #00a1ff, #18e7ff);
+}
+
+body {
+  background-color: var(--furia-black);
+  font-family: 'Montserrat', sans-serif;
+  color: var(--furia-white);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.register-container {
+  display: flex;
+  width: 85%;
+  max-width: 1200px;
+  min-height: 650px;
+  background-color: var(--furia-gray);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 161, 255, 0.3);
+}
+
+/* Register Left - Form Side */
+.register-left {
+  flex: 1.2;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-y: auto;
+}
+
+.register-left::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0,161,255,0.1) 0%, rgba(0,0,0,0) 70%);
+  z-index: 0;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.furia-logo {
+  width: 120px;
+  height: auto;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 3px;
+  color: var(--furia-highlight);
+  text-shadow: 0 0 10px rgba(24, 231, 255, 0.3);
+  text-align: center;
+}
+
+form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1.2rem;
+}
+
+.input-group i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--furia-blue);
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--furia-white);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--furia-blue);
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 161, 255, 0.3);
+}
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--furia-blue);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.toggle-password:hover {
+  opacity: 1;
+}
+
+/* Esport Selection Styles */
+.esport-selection {
+  margin: 1.5rem 0;
+  border-radius: 15px;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.esport-selection h3 {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--furia-blue);
+}
+
+.esport-subtitle {
+  font-size: 0.85rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.esport-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.esport-option {
+  position: relative;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.esport-option:hover {
+  background-color: rgba(0, 161, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+.esport-option.selected {
+  background-color: rgba(0, 161, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 161, 255, 0.4);
+  border: 1px solid var(--furia-blue);
+}
+
+.esport-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.esport-option label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.esport-option label i {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  color: var(--furia-blue);
+  transition: all 0.3s ease;
+}
+
+.esport-option:hover label i {
+  transform: scale(1.1);
+  color: var(--furia-highlight);
+}
+
+.esport-option label span {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Terms & Privacy Checkbox */
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.terms-checkbox input[type="checkbox"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--furia-blue);
+  cursor: pointer;
+}
+
+.terms-checkbox label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.terms-checkbox a {
+  color: var(--furia-blue);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.terms-checkbox a:hover {
+  color: var(--furia-highlight);
+  text-decoration: underline;
+}
+
+/* Register Button */
+.btn-register {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  background: var(--gradient-primary);
+  color: var(--furia-white);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-register span {
+  margin-right: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-register i {
+  position: relative;
+  z-index: 2;
+}
+
+.btn-register::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+  transition: all 0.5s ease;
+}
+
+.btn-register:hover::before {
+  left: 100%;
+}
+
+.btn-register:hover {
+  box-shadow: 0 0 20px rgba(0, 161, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.login-link {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.login-link p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.login-link a {
+  color: var(--furia-blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+  color: var(--furia-highlight);
+  text-decoration: underline;
+}
+
+/* Register Right - Background Image Side */
+.register-right {
+  flex: 0.8;
+  position: relative;
+  overflow: hidden;
+}
+
+.esports-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/esports-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.3);
+  transition: transform 0.5s ease;
+}
+
+.register-right:hover .esports-background {
+  transform: scale(1.05);
+}
+
+.overlay-content {
+  position: relative;
+  z-index: 1;
+  padding: 3rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.overlay-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  color: var(--furia-highlight);
+}
+
+.overlay-content p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.feature i {
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 161, 255, 0.2);
+  border-radius: 50%;
+  color: var(--furia-blue);
+}
+
+.feature span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Notification Styles */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  background-color: var(--furia-gray);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.notification.success {
+  border-left: 4px solid #4CAF50;
+}
+
+.notification.error {
+  border-left: 4px solid #F44336;
+}
+
+.notification.warning {
+  border-left: 4px solid #FFC107;
+}
+
+.notification.info {
+  border-left: 4px solid var(--furia-blue);
+}
+
+.notification i {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.notification.success i {
+  color: #4CAF50;
+}
+
+.notification.error i {
+  color: #F44336;
+}
+
+.notification.warning i {
+  color: #FFC107;
+}
+
+.notification.info i {
+  color: var(--furia-blue);
+}
+
+.notification span {
+  flex: 1;
+}
+
+.close-notification {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding: 0;
+  margin-left: 10px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.close-notification:hover {
+  color: white;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .register-container {
+      flex-direction: column;
+      width: 90%;
+  }
+  
+  .register-left, .register-right {
+      flex: none;
+  }
+  
+  .register-right {
+      min-height: 300px;
+  }
+  
+  .esport-options {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+      padding: 1rem 0;
+  }
+  
+  .register-container {
+      width: 95%;
+  }
+  
+  .register-left {
+      padding: 1.5rem;
+  }
+  
+  .overlay-content {
+      padding: 2rem;
+  }
+  
+  .overlay-content h2 {
+      font-size: 1.7rem;
+  }
+  
+  .esport-options {
+      grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-container {
+      margin-bottom: 1rem;
+  }
+  
+  .furia-logo {
+      width: 100px;
+  }
+  
+  h1 {
+      font-size: 1.7rem;
+      margin-bottom: 1.2rem;
+  }
+  
+  .register-right {
+      min-height: 250px;
+  }
+  
+  .overlay-content {
+      padding: 1.5rem;
+  }
+  
+  .overlay-content h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+  }
+  
+  .overlay-content p {
+      font-size: 0.9rem;
+  }
+  
+  .feature i {
+      width: 35px;
+      height: 35px;
+      font-size: 1rem;
+  }
+  
+  .feature span {
+      font-size: 0.9rem;
+  }
+}

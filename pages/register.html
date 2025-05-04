@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FURIA eSports - Cadastro</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Css personalizado -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="register-container">
+            <div class="register-left" data-aos="fade-right" data-aos-duration="1000">
+                <div class="logo-container animate__animated animate__fadeInDown">
+                    <img src="../assets/img/logo.png" alt="FURIA Logo" class="furia-logo">
+                </div>
+                
+                <h1 class="animate__animated animate__fadeIn animate__delay-1s">CADASTRE-SE</h1>
+                
+                <form id="registerForm" class="animate__animated animate__fadeIn animate__delay-1s">
+                    <div class="input-group">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="username" placeholder="Seu nome ou apelido" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="email" placeholder="E-mail" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" placeholder="Senha" required>
+                        <i class="fa-solid fa-eye toggle-password"></i>
+                    </div>
+                    
+                    <div class="input-group">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="confirmPassword" placeholder="Confirme sua senha" required>
+                        <i class="fa-solid fa-eye toggle-password"></i>
+                    </div>
+                    
+                    <div class="esport-selection">
+                        <h3>Escolha seu eSport favorito</h3>
+                        <p class="esport-subtitle">Seu conteúdo será personalizado baseado nesta escolha</p>
+                        
+                        <div class="esport-options">
+                            <div class="esport-option" data-aos="zoom-in" data-aos-delay="100">
+                                <input type="radio" id="csgo" name="favEsport" value="csgo">
+                                <label for="csgo">
+                                    <i class="fa-solid fa-crosshairs"></i>
+                                    <span>CS:GO</span>
+                                </label>
+                            </div>
+                            
+                            <div class="esport-option" data-aos="zoom-in" data-aos-delay="200">
+                                <input type="radio" id="valorant" name="favEsport" value="valorant">
+                                <label for="valorant">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                    <span>Valorant</span>
+                                </label>
+                            </div>
+                            
+                            <div class="esport-option" data-aos="zoom-in" data-aos-delay="300">
+                                <input type="radio" id="lol" name="favEsport" value="lol">
+                                <label for="lol">
+                                    <i class="fa-solid fa-gem"></i>
+                                    <span>League of Legends</span>
+                                </label>
+                            </div>
+                            
+                            <div class="esport-option" data-aos="zoom-in" data-aos-delay="400">
+                                <input type="radio" id="freefire" name="favEsport" value="freefire">
+                                <label for="freefire">
+                                    <i class="fa-solid fa-fire"></i>
+                                    <span>Free Fire</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="terms-checkbox">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">Li e concordo com os <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a></label>
+                    </div>
+                    
+                    <button type="submit" class="btn-register">
+                        <span>CADASTRAR</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+                
+                <div class="login-link animate__animated animate__fadeIn animate__delay-2s">
+                    <p>Já tem uma conta? <a href="login.html">Faça login</a></p>
+                </div>
+            </div>
+            
+            <div class="register-right" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <div class="esports-background"></div>
+                <div class="overlay-content">
+                    <h2>JUNTE-SE À NAÇÃO FURIA</h2>
+                    <p>Acompanhe seus jogadores e times favoritos, fique por dentro das novidades, calendário de jogos, estatísticas exclusivas e muito mais.</p>
+                    <div class="feature-list">
+                        <div class="feature">
+                            <i class="fa-solid fa-newspaper"></i>
+                            <span>Notícias em primeira mão</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fa-solid fa-trophy"></i>
+                            <span>Resultados em tempo real</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <span>Calendário de partidas</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fa-solid fa-user-group"></i>
+                            <span>Perfis de jogadores</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="../assets/js/auth.js"></script>
+</body>
+</html>

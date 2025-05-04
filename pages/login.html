@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FURIA eSports - Login</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Css personalizado -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <div class="login-left" data-aos="fade-right" data-aos-duration="1000">
+                <div class="esports-background"></div>
+            </div>
+            
+            <div class="login-right" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <div class="logo-container animate__animated animate__fadeInDown">
+                    <img src="../assets/img/logo.png" alt="FURIA Logo" class="furia-logo">
+                </div>
+                
+                <h1 class="animate__animated animate__fadeIn animate__delay-1s">LOGIN</h1>
+                
+                <form id="loginForm" class="animate__animated animate__fadeIn animate__delay-1s">
+                    <div class="input-group">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="email" placeholder="E-mail" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" placeholder="Senha" required>
+                        <i class="fa-solid fa-eye toggle-password"></i>
+                    </div>
+                    
+                    <div class="forgot-password">
+                        <a href="#">Esqueceu a senha?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn-login">
+                        <span>ENTRAR</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+                
+                <div class="register-link animate__animated animate__fadeIn animate__delay-2s">
+                    <p>Não tem uma conta? <a href="register.html">Cadastre-se</a></p>
+                </div>
+                
+                <div class="social-login animate__animated animate__fadeIn animate__delay-2s">
+                    <p>Ou entre com</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-google"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="../assets/js/auth.js"></script>
+</body>
+</html>

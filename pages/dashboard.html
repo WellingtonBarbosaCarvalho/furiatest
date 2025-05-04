@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FURIA eSports - Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Splide.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    
+    <!-- Css personalizado -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="../assets/img/logo.png" alt="FURIA Logo">
+            </div>
+            
+            <nav class="nav-desktop">
+                <ul>
+                    <li class="active"><a href="#home">Home</a></li>
+                    <li><a href="#news">Notícias</a></li>
+                    <li><a href="#team">Equipe</a></li>
+                    <li><a href="#matches">Partidas</a></li>
+                    <li><a href="#community">Comunidade</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="theme-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                </div>
+                
+                <div class="user-profile">
+                    <img src="../assets/img/default-avatar.png" alt="Avatar" class="user-avatar">
+                    <span class="username">Usuário</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    
+                    <div class="user-dropdown">
+                        <ul>
+                            <li><a href="#"><i class="fa-solid fa-user"></i> Meu Perfil</a></li>
+                            <li><a href="#"><i class="fa-solid fa-gear"></i> Configurações</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" onclick="logoutUser()"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <img src="../assets/img/logo.png" alt="FURIA Logo" class="mobile-logo">
+            <button class="close-menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        
+        <nav class="nav-mobile">
+            <ul>
+                <li class="active"><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="#news"><i class="fa-solid fa-newspaper"></i> Notícias</a></li>
+                <li><a href="#team"><i class="fa-solid fa-users"></i> Equipe</a></li>
+                <li><a href="#matches"><i class="fa-solid fa-trophy"></i> Partidas</a></li>
+                <li><a href="#community"><i class="fa-solid fa-comment"></i> Comunidade</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="fa-solid fa-user"></i> Meu Perfil</a></li>
+                <li><a href="#"><i class="fa-solid fa-gear"></i> Configurações</a></li>
+                <li><a href="#" onclick="logoutUser()"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <div class="hero-slider splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="hero-slide">
+                                <div class="hero-image" style="background-image: url('../assets/img/hero-1.jpg')"></div>
+                                <div class="hero-content">
+                                    <h1 data-aos="fade-up">BEM-VINDO À NAÇÃO FURIA</h1>
+                                    <p data-aos="fade-up" data-aos-delay="100">Seu portal para acompanhar as novidades do time que representa o Brasil no mundo.</p>
+                                    <a href="#news" class="btn-primary" data-aos="fade-up" data-aos-delay="200">
+                                        <span>ÚLTIMAS NOTÍCIAS</span>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="hero-slide">
+                                <div class="hero-image" style="background-image: url('../assets/img/hero-2.jpg')"></div>
+                                <div class="hero-content">
+                                    <h1>PRÓXIMAS PARTIDAS</h1>
+                                    <p>Não perca nenhum jogo da FURIA. Confira o calendário e transmissões ao vivo.</p>
+                                    <a href="#matches" class="btn-primary">
+                                        <span>VER AGENDA</span>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="hero-slide">
+                                <div class="hero-image" style="background-image: url('../assets/img/hero-3.jpg')"></div>
+                                <div class="hero-content">
+                                    <h1>CONHEÇA OS JOGADORES</h1>
+                                    <p>Descubra mais sobre as estrelas que representam a FURIA nos maiores campeonatos mundiais.</p>
+                                    <a href="#team" class="btn-primary">
+                                        <span>NOSSO TIME</span>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="splide__progress">
+                    <div class="splide__progress__bar"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Main Dashboard Container -->
+        <div class="dashboard-container">
+            <!-- Left Content - Main Feed -->
+            <div class="main-feed">
+                <!-- Current Game Section -->
+                <section class="current-game-section" data-aos="fade-up">
+                    <div class="section-header">
+                        <h2 id="current-esport-title">CS:GO</h2>
+                        <div class="game-switcher">
+                            <button class="game-switch active" data-game="csgo">
+                                <i class="fa-solid fa-crosshairs"></i>
+                                <span>CS:GO</span>
+                            </button>
+                            <button class="game-switch" data-game="valorant">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                <span>Valorant</span>
+                            </button>
+                            <button class="game-switch" data-game="lol">
+                                <i class="fa-solid fa-gem"></i>
+                                <span>LoL</span>
+                            </button>
+                            <button class="game-switch" data-game="freefire">
+                                <i class="fa-solid fa-fire"></i>
+                                <span>Free Fire</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Right Sidebar -->
+            <aside class="sidebar">
+                <!-- Live Now Section -->
+                <div class="sidebar-section live-now" data-aos="fade-left">
+                    <div class="section-header">
+                        <h3>Ao Vivo</h3>
+                    </div>
+                    
+                    <div class="live-stream">
+                        <div class="live-thumbnail">
+                            <img src="../assets/img/live-thumbnail.jpg" alt="Transmissão ao vivo">
+                            <div class="live-indicator">
+                                <i class="fa-solid fa-circle"></i> LIVE
+                            </div>
+                            <div class="live-viewers">
+                                <i class="fa-solid fa-eye"></i> 12.4K
+                            </div>
+                        </div>
+                        <div class="live-info">
+                            <h4>FURIA vs Team Liquid - ESL Pro League</h4>
+                            <p>Assista nosso time em ação agora!</p>
+                            <a href="#" class="btn-watch-now">
+                                <i class="fa-solid fa-play"></i>
+                                <span>Assistir Agora</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trending Topics Section -->
+                <div class="sidebar-section trending-topics" data-aos="fade-left" data-aos-delay="100">
+                    <div class="section-header">
+                        <h3>Trend Topics</h3>
+                    </div>
+                    
+                    <div class="topics-list" id="trending-topics">
+                        <!-- Trends carregados via JavaScript -->
+                        <div class="topic-item">
+                            <div class="topic-rank">#1</div>
+                            <div class="topic-content">
+                                <div class="topic-tag">#FURIAWIN</div>
+                                <div class="topic-stats">65.3K menções</div>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-item">
+                            <div class="topic-rank">#2</div>
+                            <div class="topic-content">
+                                <div class="topic-tag">#CSGOMAJOR</div>
+                                <div class="topic-stats">42.8K menções</div>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-item">
+                            <div class="topic-rank">#3</div>
+                            <div class="topic-content">
+                                <div class="topic-tag">#KSCERATO</div>
+                                <div class="topic-stats">28.1K menções</div>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-item">
+                            <div class="topic-rank">#4</div>
+                            <div class="topic-content">
+                                <div class="topic-tag">#SOMOSFURIA</div>
+                                <div class="topic-stats">18.5K menções</div>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-item">
+                            <div class="topic-rank">#5</div>
+                            <div class="topic-content">
+                                <div class="topic-tag">#VALORANTCHAMPS</div>
+                                <div class="topic-stats">12.7K menções</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Next Matches Section -->
+                <div class="sidebar-section next-matches" data-aos="fade-left" data-aos-delay="200">
+                    <div class="section-header">
+                        <h3>Próximos Jogos</h3>
+                    </div>
+                    
+                    <div class="mini-matches" id="mini-matches">
+                        <!-- Mini matches carregados via JavaScript -->
+                        <div class="mini-match">
+                            <div class="mini-match-date">
+                                <span class="day">6</span>
+                                <span class="month">MAI</span>
+                            </div>
+                            
+                            <div class="mini-match-teams">
+                                <div class="mini-team">
+                                    <img src="../assets/img/logo.png" alt="FURIA">
+                                    <span>FURIA</span>
+                                </div>
+                                <div class="mini-vs">VS</div>
+                                <div class="mini-team">
+                                    <img src="../assets/img/team-1.png" alt="Team Liquid">
+                                    <span>TL</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mini-match-info">
+                                <div class="mini-match-time">14:00</div>
+                                <div class="mini-match-tournament">ESL Pro League</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mini-match">
+                            <div class="mini-match-date">
+                                <span class="day">8</span>
+                                <span class="month">MAI</span>
+                            </div>
+                            
+                            <div class="mini-match-teams">
+                                <div class="mini-team">
+                                    <img src="../assets/img/team-2.png" alt="NAVI">
+                                    <span>NAVI</span>
+                                </div>
+                                <div class="mini-vs">VS</div>
+                                <div class="mini-team">
+                                    <img src="../assets/img/logo.png" alt="FURIA">
+                                    <span>FURIA</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mini-match-info">
+                                <div class="mini-match-time">16:30</div>
+                                <div class="mini-match-tournament">BLAST Premier</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mini-match">
+                            <div class="mini-match-date">
+                                <span class="day">12</span>
+                                <span class="month">MAI</span>
+                            </div>
+                            
+                            <div class="mini-match-teams">
+                                <div class="mini-team">
+                                    <img src="../assets/img/logo.png" alt="FURIA">
+                                    <span>FURIA</span>
+                                </div>
+                                <div class="mini-vs">VS</div>
+                                <div class="mini-team">
+                                    <img src="../assets/img/team-4.png" alt="FaZe">
+                                    <span>FaZe</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mini-match-info">
+                                <div class="mini-match-time">13:45</div>
+                                <div class="mini-match-tournament">IEM Summer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Rankings Section -->
+                <div class="sidebar-section rankings" data-aos="fade-left" data-aos-delay="300">
+                    <div class="section-header">
+                        <h3>Rankings Globais</h3>
+                    </div>
+                    
+                    <div class="rankings-list" id="rankings-list">
+                        <!-- Rankings carregados via JavaScript -->
+                        <div class="ranking-category">
+                            <div class="ranking-title">CS:GO - HLTV.org</div>
+                            <div class="ranking-teams">
+                                <div class="ranking-team">
+                                    <div class="rank">#1</div>
+                                    <div class="team-logo">
+                                        <img src="../assets/img/team-2.png" alt="NAVI">
+                                    </div>
+                                    <div class="team-name">NAVI</div>
+                                    <div class="team-points">1000 pts</div>
+                                </div>
+                                
+                                <div class="ranking-team">
+                                    <div class="rank">#2</div>
+                                    <div class="team-logo">
+                                        <img src="../assets/img/team-1.png" alt="Team Liquid">
+                                    </div>
+                                    <div class="team-name">Team Liquid</div>
+                                    <div class="team-points">955 pts</div>
+                                </div>
+                                
+                                <div class="ranking-team highlighted">
+                                    <div class="rank">#3</div>
+                                    <div class="team-logo">
+                                        <img src="../assets/img/logo.png" alt="FURIA">
+                                    </div>
+                                    <div class="team-name">FURIA</div>
+                                    <div class="team-points">885 pts</div>
+                                </div>
+                                
+                                <div class="ranking-team">
+                                    <div class="rank">#4</div>
+                                    <div class="team-logo">
+                                        <img src="../assets/img/team-4.png" alt="FaZe">
+                                    </div>
+                                    <div class="team-name">FaZe</div>
+                                    <div class="team-points">856 pts</div>
+                                </div>
+                                
+                                <div class="ranking-team">
+                                    <div class="rank">#5</div>
+                                    <div class="team-logo">
+                                        <img src="../assets/img/team-5.png" alt="Vitality">
+                                    </div>
+                                    <div class="team-name">Vitality</div>
+                                    <div class="team-points">810 pts</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="../assets/img/logo.png" alt="FURIA Logo">
+            </div>
+            
+            <div class="footer-social">
+                <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-twitch"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-discord"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Sobre FURIA</h4>
+                <ul>
+                    <li><a href="#">Nossa História</a></li>
+                    <li><a href="#">Equipe</a></li>
+                    <li><a href="#">Parcerias</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Imprensa</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Times</h4>
+                <ul>
+                    <li><a href="#">CS:GO</a></li>
+                    <li><a href="#">Valorant</a></li>
+                    <li><a href="#">League of Legends</a></li>
+                    <li><a href="#">Free Fire</a></li>
+                    <li><a href="#">Rainbow Six</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Competições</h4>
+                <ul>
+                    <li><a href="#">Calendário</a></li>
+                    <li><a href="#">Resultados</a></li>
+                    <li><a href="#">Rankings</a></li>
+                    <li><a href="#">Estatísticas</a></li>
+                    <li><a href="#">Histórico</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Comunidade</h4>
+                <ul>
+                    <li><a href="#">Loja</a></li>
+                    <li><a href="#">Discord</a></li>
+                    <li><a href="#">Área de Fãs</a></li>
+                    <li><a href="#">Eventos</a></li>
+                    <li><a href="#">Suporte</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Newsletter</h4>
+                <p>Receba novidades e atualizações exclusivas!</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Seu e-mail" required>
+                    <button type="submit">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="copyright">
+                &copy; 2025 FURIA Esports. Todos os direitos reservados.
+            </div>
+            
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar o slider
+            new Splide('.hero-slider', {
+                type: 'fade',
+                rewind: true,
+                autoplay: true,
+                interval: 5000,
+                pauseOnHover: false,
+                pagination: true,
+                arrows: true,
+                lazyLoad: 'nearby',
+            }).mount();
+            
+            // Inicializar sidebar
+            initSidebar();
+        });
+        
+        // Função para mostrar/ocultar o menu mobile
+        function initSidebar() {
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const closeMenu = document.querySelector('.close-menu');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (menuToggle && closeMenu && mobileMenu) {
+                menuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+                
+                closeMenu.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            }
+            
+            // Toggle user dropdown
+            const userProfile = document.querySelector('.user-profile');
+            const userDropdown = document.querySelector('.user-dropdown');
+            
+            if (userProfile && userDropdown) {
+                userProfile.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    userDropdown.classList.toggle('active');
+                });
+                
+                document.addEventListener('click', function(e) {
+                    if (!userProfile.contains(e.target)) {
+                        userDropdown.classList.remove('active');
+                    }
+                });
+            }
+        }
+    </script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+    <script src="../assets/js/api.js"></script>
+</body>
+</html>-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fa
+                
+                <!-- News Section -->
+                <section class="news-section" id="news" data-aos="fade-up" data-aos-delay="100">
+                    <div class="section-header">
+                        <h2>Últimas Notícias</h2>
+                        <a href="#" class="view-all">Ver todas <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="news-grid" id="news-container">
+                        <!-- Notícias serão carregadas via JavaScript -->
+                        <div class="news-card" data-aos="fade-up">
+                            <div class="news-image" style="background-image: url('../assets/img/news-1.jpg')">
+                                <div class="news-category">CS:GO</div>
+                            </div>
+                            <div class="news-content">
+                                <div class="news-date">
+                                    <i class="fa-regular fa-calendar"></i> 04 Maio, 2025
+                                </div>
+                                <h3>FURIA vence torneio sul-americano e garante vaga no Major</h3>
+                                <p>Time brasileiro domina competição e assegura participação no próximo campeonato mundial.</p>
+                                <a href="#" class="read-more">
+                                    Continuar lendo <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="news-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="news-image" style="background-image: url('../assets/img/news-2.jpg')">
+                                <div class="news-category">Valorant</div>
+                            </div>
+                            <div class="news-content">
+                                <div class="news-date">
+                                    <i class="fa-regular fa-calendar"></i> 03 Maio, 2025
+                                </div>
+                                <h3>FURIA anuncia novo jogador para completar line-up de Valorant</h3>
+                                <p>Jogador promissor da cena competitiva chega para reforçar a equipe nos próximos campeonatos.</p>
+                                <a href="#" class="read-more">
+                                    Continuar lendo <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="news-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="news-image" style="background-image: url('../assets/img/news-3.jpg')">
+                                <div class="news-category">LoL</div>
+                            </div>
+                            <div class="news-content">
+                                <div class="news-date">
+                                    <i class="fa-regular fa-calendar"></i> 02 Maio, 2025
+                                </div>
+                                <h3>FURIA se mantém invicta no CBLOL e lidera tabela do campeonato</h3>
+                                <p>Equipe segue com 100% de aproveitamento e se consolida como favorita ao título do split.</p>
+                                <a href="#" class="read-more">
+                                    Continuar lendo <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Team Section -->
+                <section class="team-section" id="team" data-aos="fade-up">
+                    <div class="section-header">
+                        <h2>Nosso Time</h2>
+                        <div class="team-filters">
+                            <button class="team-filter active" data-team="csgo">CS:GO</button>
+                            <button class="team-filter" data-team="valorant">Valorant</button>
+                            <button class="team-filter" data-team="lol">LoL</button>
+                            <button class="team-filter" data-team="freefire">Free Fire</button>
+                        </div>
+                    </div>
+                    
+                    <div class="team-container" id="team-container">
+                        <!-- A equipe será carregada dinamicamente via JavaScript -->
+                        <div class="player-cards">
+                            <div class="player-card" data-aos="fade-up">
+                                <div class="player-image">
+                                    <img src="../assets/img/player1.png" alt="Jogador 1">
+                                </div>
+                                <div class="player-info">
+                                    <h3 class="player-name">arT</h3>
+                                    <p class="player-role">Capitão / AWPer</p>
+                                    <div class="player-social">
+                                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="#"><i class="fa-brands fa-twitch"></i></a>
+                                    </div>
+                                </div>
+                                <div class="player-stats">
+                                    <div class="stat">
+                                        <span class="stat-value">1.25</span>
+                                        <span class="stat-label">Rating</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">85.2%</span>
+                                        <span class="stat-label">HS %</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">4</span>
+                                        <span class="stat-label">Anos</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="player-profile-link">Ver Perfil</a>
+                            </div>
+                            
+                            <div class="player-card" data-aos="fade-up" data-aos-delay="100">
+                                <div class="player-image">
+                                    <img src="../assets/img/player2.png" alt="Jogador 2">
+                                </div>
+                                <div class="player-info">
+                                    <h3 class="player-name">KSCERATO</h3>
+                                    <p class="player-role">Rifler</p>
+                                    <div class="player-social">
+                                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="#"><i class="fa-brands fa-twitch"></i></a>
+                                    </div>
+                                </div>
+                                <div class="player-stats">
+                                    <div class="stat">
+                                        <span class="stat-value">1.32</span>
+                                        <span class="stat-label">Rating</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">88.6%</span>
+                                        <span class="stat-label">HS %</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">3.5</span>
+                                        <span class="stat-label">Anos</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="player-profile-link">Ver Perfil</a>
+                            </div>
+                            
+                            <div class="player-card" data-aos="fade-up" data-aos-delay="200">
+                                <div class="player-image">
+                                    <img src="../assets/img/player3.png" alt="Jogador 3">
+                                </div>
+                                <div class="player-info">
+                                    <h3 class="player-name">yuurih</h3>
+                                    <p class="player-role">Rifler / Support</p>
+                                    <div class="player-social">
+                                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="#"><i class="fa-brands fa-twitch"></i></a>
+                                    </div>
+                                </div>
+                                <div class="player-stats">
+                                    <div class="stat">
+                                        <span class="stat-value">1.28</span>
+                                        <span class="stat-label">Rating</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">86.3%</span>
+                                        <span class="stat-label">HS %</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">3.8</span>
+                                        <span class="stat-label">Anos</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="player-profile-link">Ver Perfil</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Matches Section -->
+                <section class="matches-section" id="matches" data-aos="fade-up">
+                    <div class="section-header">
+                        <h2>Próximas Partidas</h2>
+                        <a href="#" class="view-all">Ver todas <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="matches-container" id="matches-container">
+                        <!-- Partidas serão carregadas dinamicamente via JavaScript -->
+                        <div class="match-card" data-aos="fade-up">
+                            <div class="match-date">
+                                <div class="date">06 Maio</div>
+                                <div class="time">14:00</div>
+                            </div>
+                            
+                            <div class="match-tournament">
+                                <img src="../assets/img/tournament-1.png" alt="Torneio">
+                                <span>ESL Pro League Season 20</span>
+                            </div>
+                            
+                            <div class="match-teams">
+                                <div class="team team-home">
+                                    <img src="../assets/img/logo.png" alt="FURIA">
+                                    <span>FURIA</span>
+                                </div>
+                                
+                                <div class="match-info">
+                                    <div class="match-format">BO3</div>
+                                    <div class="match-status upcoming">VS</div>
+                                </div>
+                                
+                                <div class="team team-away">
+                                    <img src="../assets/img/team-1.png" alt="Time 1">
+                                    <span>Team Liquid</span>
+                                </div>
+                            </div>
+                            
+                            <div class="match-actions">
+                                <a href="#" class="btn-watch">
+                                    <i class="fa-solid fa-bell"></i>
+                                    <span>Lembrete</span>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="match-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="match-date">
+                                <div class="date">08 Maio</div>
+                                <div class="time">16:30</div>
+                            </div>
+                            
+                            <div class="match-tournament">
+                                <img src="../assets/img/tournament-2.png" alt="Torneio">
+                                <span>BLAST Premier Spring Final</span>
+                            </div>
+                            
+                            <div class="match-teams">
+                                <div class="team team-home">
+                                    <img src="../assets/img/team-2.png" alt="Time 2">
+                                    <span>NAVI</span>
+                                </div>
+                                
+                                <div class="match-info">
+                                    <div class="match-format">BO3</div>
+                                    <div class="match-status upcoming">VS</div>
+                                </div>
+                                
+                                <div class="team team-away">
+                                    <img src="../assets/img/logo.png" alt="FURIA">
+                                    <span>FURIA</span>
+                                </div>
+                            </div>
+                            
+                            <div class="match-actions">
+                                <a href="#" class="btn-watch">
+                                    <i class="fa-solid fa-bell"></i>
+                                    <span>Lembrete</span>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="match-card past" data-aos="fade-up" data-aos-delay="200">
+                            <div class="match-date">
+                                <div class="date">01 Maio</div>
+                                <div class="time">12:00</div>
+                            </div>
+                            
+                            <div class="match-tournament">
+                                <img src="../assets/img/tournament-3.png" alt="Torneio">
+                                <span>IEM Rio 2025</span>
+                            </div>
+                            
+                            <div class="match-teams">
+                                <div class="team team-home">
+                                    <img src="../assets/img/logo.png" alt="FURIA">
+                                    <span>FURIA</span>
+                                </div>
+                                
+                                <div class="match-info">
+                                    <div class="match-format">BO3</div>
+                                    <div class="match-status finished win">2:0</div>
+                                </div>
+                                
+                                <div class="team team-away">
+                                    <img src="../assets/img/team-3.png" alt="Time 3">
+                                    <span>Cloud9</span>
+                                </div>
+                            </div>
+                            
+                            <div class="match-actions">
+                                <a href="#" class="btn-highlights">
+                                    <i class="fa-solid fa-play"></i>
+                                    <span>Highlights</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Community Section -->
+                <section class="community-section" id="community" data-aos="fade-up">
+                    <div class="section-header">
+                        <h2>Comunidade</h2>
+                        <a href="#" class="view-all">Ver mais <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="social-feed" id="social-feed">
+                        <!-- Conteúdo de redes sociais carregado via JavaScript -->
+                        <div class="social-card twitter" data-aos="zoom-in">
+                            <div class="social-header">
+                                <img src="../assets/img/twitter.png" alt="Twitter" class="social-icon">
+                                <div class="social-user">
+                                    <span class="user-name">FURIA</span>
+                                    <span class="user-handle">@FURIA</span>
+                                </div>
+                                <i class="fa-brands fa-twitter social-brand"></i>
+                            </div>
+                            <div class="social-content">
+                                <p>Estamos muito felizes em anunciar nossa classificação para o Major! Obrigado a todos os fãs pelo apoio incrível! #VamosFURIA #SomosFURIA</p>
+                                <div class="social-image" style="background-image: url('../assets/img/social-1.jpg')"></div>
+                            </div>
+                            <div class="social-footer">
+                                <div class="social-stats">
+                                    <div class="stat">
+                                        <i class="fa-solid fa-heart"></i>
+                                        <span>3.2K</span>
+                                    </div>
+                                    <div class="stat">
+                                        <i class="fa-solid fa-retweet"></i>
+                                        <span>1.5K</span>
+                                    </div>
+                                    <div class="stat">
+                                        <i class="fa-solid fa-comment"></i>
+                                        <span>245</span>
+                                    </div>
+                                </div>
+                                <div class="social-time">2h atrás</div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-card instagram" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="social-header">
+                                <img src="../assets/img/instagram.png" alt="Instagram" class="social-icon">
+                                <div class="social-user">
+                                    <span class="user-name">FURIA</span>
+                                    <span class="user-handle">@furiagg</span>
+                                </div>
+                                <i class="fa-brands fa-instagram social-brand"></i>
+                            </div>
+                            <div class="social-content">
+                                <div class="social-image" style="background-image: url('../assets/img/social-2.jpg')"></div>
+                                <p>Treino intenso hoje! Preparando para o próximo desafio. 💪 #GameDay #SomosFURIA</p>
+                            </div>
+                            <div class="social-footer">
+                                <div class="social-stats">
+                                    <div class="stat">
+                                        <i class="fa-solid fa-heart"></i>
+                                        <span>5.7K</span>
+                                    </div>
+                                    <div class="stat">
+                                        <i class="fa-solid fa-comment"></i>
+                                        <span>342</span>
+                                    </div>
+                                </div>
+                                <div class="social-time">5h atrás</div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-card youtube" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="social-header">
+                                <img src="../assets/img/youtube.png" alt="YouTube" class="social-icon">
+                                <div class="social-user">
+                                    <span class="user-name">FURIA</span>
+                                    <span class="user-handle">FURIA Esports</span>
+                                </div>
+                                <i class="fa-brands fa-youtube social-brand"></i>
+                            </div>
+                            <div class="social-content">
+                                <div class="social-video" style="background-image: url('../assets/img/social-3.jpg')">
+                                    <div class="play-button">
+                                        <i class="fa-solid fa-play"></i>
+                                    </div>
+                                </div>
+                                <p>FURIA vs Team Liquid - Melhores momentos da final! 🏆</p>
+                            </div>
+                            <div class="social-footer">
+                                <div class="social-stats">
+                                    <div class="stat">
+                                        <i class="fa-solid fa-eye"></i>
+                                        <span>32K</span>
+                                    </div>
+                                    <div class="stat">
+                                        <i class="fa-solid fa-thumbs-up"></i>
+                                        <span>4.8K</span>
+                                    </div>
+                                </div>
+                                <div class="social-time">1d atrás</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
