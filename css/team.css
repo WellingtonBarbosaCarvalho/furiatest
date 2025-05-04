@@ -656,4 +656,235 @@
   display: flex;
   align-items: center;
   padding: 15px 0;
-  border-bottom:
+  border-bottom: 1px solid var(--border-color);
+}
+
+.achievement-item:last-child {
+  border-bottom: none;
+}
+
+.achievement-medal {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  color: var(--primary-color);
+}
+
+.achievement-medal.gold {
+  background-color: #ffd700;
+}
+
+.achievement-medal.silver {
+  background-color: #c0c0c0;
+}
+
+.achievement-medal.bronze {
+  background-color: #cd7f32;
+}
+
+.achievement-info h4 {
+  margin-bottom: 5px;
+}
+
+.achievement-date {
+  font-size: 0.85rem;
+  color: #bbbbbb;
+}
+
+/* Community Posts */
+.community-item {
+  display: flex;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.community-item:last-child {
+  border-bottom: none;
+}
+
+.community-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.community-author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+.community-author span {
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+.community-text {
+  flex: 1;
+}
+
+.community-text p {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.community-meta {
+  display: flex;
+  gap: 15px;
+  font-size: 0.8rem;
+  color: #bbbbbb;
+}
+
+.community-meta span i {
+  margin-right: 5px;
+}
+
+.community-meta .time {
+  margin-left: auto;
+}
+
+/* Products */
+.product-item {
+  display: flex;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.product-item:last-child {
+  border-bottom: none;
+}
+
+.product-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-info h4 {
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.product-price {
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.btn-shop {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-shop:hover {
+  background-color: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .team-container {
+      grid-template-columns: 1fr;
+  }
+  
+  .team-sidebar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+  }
+  
+  .sidebar-widget {
+      margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .team-banner {
+      flex-direction: column;
+  }
+  
+  .team-info {
+      margin-bottom: 20px;
+  }
+  
+  .team-nav ul {
+      flex-wrap: wrap;
+  }
+  
+  .team-nav ul li {
+      flex-basis: 50%;
+  }
+  
+  .players-grid, .news-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .match-teams {
+      flex-direction: column;
+  }
+  
+  .match-teams .team {
+      margin-bottom: 20px;
+  }
+  
+  .match-footer {
+      flex-direction: column;
+      gap: 15px;
+  }
+  
+  .team-sidebar {
+      grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .team-container {
+      padding: 20px 15px;
+  }
+  
+  .team-info {
+      flex-direction: column;
+      text-align: center;
+  }
+  
+  .team-logo {
+      margin-right: 0;
+      margin-bottom: 20px;
+  }
+  
+  .team-stats {
+      justify-content: center;
+  }
+  
+  .stats-container {
+      grid-template-columns: 1fr;
+  }
+}
