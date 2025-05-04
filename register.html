@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FURIA Comunidade | Cadastro</title>
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="logo">
+                <img src="https://furia.gg/static/media/furia-logo-white.93f00a4d.png" alt="FURIA Logo">
+            </div>
+            <h1>Junte-se à <span class="highlight">Comunidade</span></h1>
+            <p class="intro-text">Crie sua conta para ter acesso a conteúdo exclusivo e personalizado sobre os times da FURIA que você mais gosta!</p>
+            
+            <form id="register-form">
+                <div class="form-step active" id="step-1">
+                    <h2>Informações Básicas</h2>
+                    <div class="form-group">
+                        <label for="username">Nome de usuário</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="password" required>
+                        <small>Mínimo de 8 caracteres, incluindo letras e números</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirm-password">Confirmar senha</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn next-btn" data-next="step-2">Próximo</button>
+                    </div>
+                </div>
+                
+                <div class="form-step" id="step-2">
+                    <h2>Seus interesses em Esports</h2>
+                    
+                    <div class="form-group">
+                        <label>Quais jogos você mais gosta de acompanhar?</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="game-cs" name="games" value="cs">
+                                <label for="game-cs">Counter-Strike</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="game-valorant" name="games" value="valorant">
+                                <label for="game-valorant">Valorant</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="game-lol" name="games" value="lol">
+                                <label for="game-lol">League of Legends</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="game-apex" name="games" value="apex">
+                                <label for="game-apex">Apex Legends</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="favorite-game">Qual é o seu jogo favorito?</label>
+                        <select id="favorite-game" name="favorite-game" required>
+                            <option value="" selected disabled>Selecione um jogo</option>
+                            <option value="cs">Counter-Strike</option>
+                            <option value="valorant">Valorant</option>
+                            <option value="lol">League of Legends</option>
+                            <option value="apex">Apex Legends</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn prev-btn" data-prev="step-1">Anterior</button>
+                        <button type="button" class="btn next-btn" data-next="step-3">Próximo</button>
+                    </div>
+                </div>
+                
+                <div class="form-step" id="step-3">
+                    <h2>Preferências de Conteúdo</h2>
+                    
+                    <div class="form-group">
+                        <label>Que tipo de conteúdo você mais gosta?</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="content-news" name="content" value="news">
+                                <label for="content-news">Notícias e atualizações</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="content-matches" name="content" value="matches">
+                                <label for="content-matches">Resultados de partidas</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="content-players" name="content" value="players">
+                                <label for="content-players">Perfil de jogadores</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="content-strategies" name="content" value="strategies">
+                                <label for="content-strategies">Estratégias e análises</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="content-community" name="content" value="community">
+                                <label for="content-community">Conteúdo da comunidade</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Quais times da FURIA você quer acompanhar?</label>
+                        <div class="team-selector">
+                            <div class="team-card" data-team="cs">
+                                <img src="images/team-cs.jpg" alt="Time CS">
+                                <h3>Counter-Strike</h3>
+                                <div class="select-overlay">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="team-card" data-team="valorant">
+                                <img src="images/team-valorant.jpg" alt="Time Valorant">
+                                <h3>Valorant</h3>
+                                <div class="select-overlay">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="team-card" data-team="lol">
+                                <img src="images/team-lol.jpg" alt="Time LoL">
+                                <h3>League of Legends</h3>
+                                <div class="select-overlay">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="team-card" data-team="apex">
+                                <img src="images/team-apex.jpg" alt="Time Apex">
+                                <h3>Apex Legends</h3>
+                                <div class="select-overlay">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <input type="hidden" id="selected-teams" name="selected-teams">
+                        </div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn prev-btn" data-prev="step-2">Anterior</button>
+                        <button type="submit" class="btn submit-btn">Criar conta</button>
+                    </div>
+                </div>
+            </form>
+            
+            <div class="form-footer">
+                <p>Já tem uma conta? <a href="login.html">Faça login</a></p>
+            </div>
+        </div>
+        
+        <div class="image-side">
+            <div class="overlay"></div>
+            <div class="content">
+                <h2>Entre para o time!</h2>
+                <p>Junte-se a milhares de fãs da FURIA e acompanhe seus times favoritos de esports como nunca antes.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

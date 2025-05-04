@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FURIA Comunidade | Dashboard</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://furia.gg/static/media/furia-logo-white.93f00a4d.png" alt="FURIA Logo">
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="fas fa-home"></i>
+                            <span>Feed</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="teams.html">
+                            <i class="fas fa-users"></i>
+                            <span>Times</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="matches.html">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Partidas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="news.html">
+                            <i class="far fa-newspaper"></i>
+                            <span>Notícias</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="community.html">
+                            <i class="fas fa-comments"></i>
+                            <span>Comunidade</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="store.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Loja</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="#" id="logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="search-container">
+                    <input type="text" placeholder="Pesquisar...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="header-actions">
+                    <div class="notification-icon">
+                        <i class="far fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <div class="avatar">
+                            <span id="user-initials">JD</span>
+                        </div>
+                        <div class="user-info">
+                            <span id="username-display">João Silva</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Feed personalizado -->
+            <div class="feed-container">
+                <div class="welcome-banner">
+                    <div class="welcome-content">
+                        <h1>Olá, <span id="user-welcome">João</span>!</h1>
+                        <p>Confira as últimas atualizações sobre seus times favoritos da FURIA.</p>
+                    </div>
+                    <div class="welcome-image">
+                        <img src="images/banner-player.png" alt="FURIA Player">
+                    </div>
+                </div>
+                
+                <div class="content-grid">
+                    <!-- Coluna principal -->
+                    <div class="main-column">
+                        <div class="content-header">
+                            <h2>Seu Feed</h2>
+                            <div class="feed-filter">
+                                <button class="filter-btn active" data-filter="all">Todos</button>
+                                <button class="filter-btn" data-filter="news">Notícias</button>
+                                <button class="filter-btn" data-filter="matches">Partidas</button>
+                                <button class="filter-btn" data-filter="community">Comunidade</button>
+                            </div>
+                        </div>
+                        
+                        <div class="content-list" id="feed-content">
+                            <!-- Feed Items -->
+                            <!-- Notícia -->
+                            <div class="feed-item" data-type="news" data-game="cs">
+                                <div class="feed-item-header">
+                                    <div class="game-tag cs">CS</div>
+                                    <span class="post-time">2 horas atrás</span>
+                                </div>
+                                <div class="feed-item-content">
+                                    <h3>FURIA vence partida crucial no Major</h3>
+                                    <p>A equipe brasileira superou a Natus Vincere em uma série de três mapas emocionantes e avançou para a próxima fase do torneio.</p>
+                                    <div class="feed-image">
+                                        <img src="images/news-cs-1.jpg" alt="FURIA vs Natus Vincere">
+                                    </div>
+                                    <div class="feed-item-actions">
+                                        <button class="action-btn like-btn">
+                                            <i class="far fa-heart"></i>
+                                            <span>127</span>
+                                        </button>
+                                        <button class="action-btn comment-btn">
+                                            <i class="far fa-comment"></i>
+                                            <span>43</span>
+                                        </button>
+                                        <button class="action-btn share-btn">
+                                            <i class="far fa-share-square"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Partida -->
+                            <div class="feed-item" data-type="matches" data-game="valorant">
+                                <div class="feed-item-header">
+                                    <div class="game-tag valorant">VAL</div>
+                                    <span class="post-time">Hoje, 19:30</span>
+                                </div>
+                                <div class="feed-item-content">
+                                    <h3>Próxima partida: FURIA vs Sentinels</h3>
+                                    <div class="match-card">
+                                        <div class="match-teams">
+                                            <div class="team">
+                                                <img src="images/furia-logo.png" alt="FURIA">
+                                                <span>FURIA</span>
+                                            </div>
+                                            <div class="vs">VS</div>
+                                            <div class="team">
+                                                <img src="images/sentinels-logo.png" alt="Sentinels">
+                                                <span>Sentinels</span>
+                                            </div>
+                                        </div>
+                                        <div class="match-info">
+                                            <div class="match-detail">
+                                                <i class="fas fa-trophy"></i>
+                                                <span>Valorant Champions Tour</span>
+                                            </div>
+                                            <div class="match-detail">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                <span>Online</span>
+                                            </div>
+                                            <div class="match-detail">
+                                                <i class="fas fa-clock"></i>
+                                                <span>19:30 (Horário de Brasília)</span>
+                                            </div>
+                                        </div>
+                                        <div class="match-actions">
+                                            <button class="btn btn-reminder">
+                                                <i class="far fa-bell"></i>
+                                                Lembrete
+                                            </button>
+                                            <button class="btn btn-watch">
+                                                <i class="fas fa-play"></i>
+                                                Assistir
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Comunidade -->
+                            <div class="feed-item" data-type="community" data-game="cs">
+                                <div class="feed-item-header">
+                                    <div class="game-tag cs">CS</div>
+                                    <span class="post-time">5 horas atrás</span>
+                                </div>
+                                <div class="feed-item-content">
+                                    <div class="community-post">
+                                        <div class="post-author">
+                                            <div class="author-avatar">
+                                                <img src="images/user-avatar.jpg" alt="Usuário">
+                                            </div>
+                                            <div class="author-info">
+                                                <span class="author-name">Matheus Castro</span>
+                                                <span class="author-rank">Fanático Nível 3</span>
+                                            </div>
+                                        </div>
+                                        <div class="post-content">
+                                            <p>Que jogada incrível do arT ontem! Aquele clutch no último round salvou a partida. Quem mais ficou gritando em casa? 🔥</p>
+                                            <div class="post-image">
+                                                <img src="images/community-post-1.jpg" alt="Jogada do arT">
+                                            </div>
+                                        </div>
+                                        <div class="feed-item-actions">
+                                            <button class="action-btn like-btn">
+                                                <i class="far fa-heart"></i>
+                                                <span>89</span>
+                                            </button>
+                                            <button class="action-btn comment-btn">
+                                                <i class="far fa-comment"></i>
+                                                <span>27</span>
+                                            </button>
+                                            <button class="action-btn share-btn">
+                                                <i class="far fa-share-square"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Notícia -->
+                            <div class="feed-item" data-type="news" data-game="lol">
+                                <div class="feed-item-header">
+                                    <div class="game-tag lol">LOL</div>
+                                    <span class="post-time">1 dia atrás</span>
+                                </div>
+                                <div class="feed-item-content">
+                                    <h3>FURIA anuncia novo mid laner para equipe de League of Legends</h3>
+                                    <p>A organização brasileira acaba de anunciar a contratação de um novo talento para a rota do meio, visando fortalecer a equipe para o próximo split do CBLOL.</p>
+                                    <div class="feed-image">
+                                        <img src="images/news-lol-1.jpg" alt="Novo jogador da FURIA">
+                                    </div>
+                                    <div class="feed-item-actions">
+                                        <button class="action-btn like-btn">
+                                            <i class="far fa-heart"></i>
+                                            <span>73</span>
+                                        </button>
+                                        <button class="action-btn comment-btn">
+                                            <i class="far fa-comment"></i>
+                                            <span>19</span>
+                                        </button>
+                                        <button class="action-btn share-btn">
+                                            <i class="far fa-share-square"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="load-more-btn">Carregar mais</button>
+                    </div>
+                    
+                    <!-- Coluna lateral -->
+                    <div class="side-column">
+                        <!-- Próximas partidas -->
+                        <div class="side-widget upcoming-matches">
+                            <div class="widget-header">
+                                <h3>Próximas Partidas</h3>
+                                <a href="matches.html" class="view-all">Ver todas</a>
+                            </div>
+                            <div class="widget-content">
+                                <div class="mini-match-card">
+                                    <div class="match-date">
+                                        <span class="day">15</span>
+                                        <span class="month">MAI</span>
+                                    </div>
+                                    <div class="match-teams">
+                                        <span class="team-name">FURIA</span>
+                                        <span class="vs">vs</span>
+                                        <span class="team-name">Team Liquid</span>
+                                    </div>
+                                    <div class="match-game cs">CS</div>
+                                </div>
+                                
+                                <div class="mini-match-card">
+                                    <div class="match-date">
+                                        <span class="day">18</span>
+                                        <span class="month">MAI</span>
+                                    </div>
+                                    <div class="match-teams">
+                                        <span class="team-name">FURIA</span>
+                                        <span class="vs">vs</span>
+                                        <span class="team-name">Sentinels</span>
+                                    </div>
+                                    <div class="match-game valorant">VAL</div>
+                                </div>
+                                
+                                <div class="mini-match-card">
+                                    <div class="match-date">
+                                        <span class="day">22</span>
+                                        <span class="month">MAI</span>
+                                    </div>
+                                    <div class="match-teams">
+                                        <span class="team-name">FURIA</span>
+                                        <span class="vs">vs</span>
+                                        <span class="team-name">paiN</span>
+                                    </div>
+                                    <div class="match-game lol">LOL</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Trending Topics -->
+                        <div class="side-widget trending-topics">
+                            <div class="widget-header">
+                                <h3>Trending Topics</h3>
+                                <span class="refresh-btn"><i class="fas fa-sync-alt"></i></span>
+                            </div>
+                            <div class="widget-content">
+                                <div class="trending-item">
+                                    <span class="trending-number">1</span>
+                                    <span class="trending-tag">#FURIAnoMajor</span>
+                                    <span class="trending-count">1.2k posts</span>
+                                </div>
+                                
+                                <div class="trending-item">
+                                    <span class="trending-number">2</span>
+                                    <span class="trending-tag">#VamosValorant</span>
+                                    <span class="trending-count">957 posts</span>
+                                </div>
+                                
+                                <div class="trending-item">
+                                    <span class="trending-number">3</span>
+                                    <span class="trending-tag">#ClutchDoArT</span>
+                                    <span class="trending-count">821 posts</span>
+                                </div>
+                                
+                                <div class="trending-item">
+                                    <span class="trending-number">4</span>
+                                    <span class="trending-tag">#NovoMidFURIA</span>
+                                    <span class="trending-count">645 posts</span>
+                                </div>
+                                
+                                <div class="trending-item">
+                                    <span class="trending-number">5</span>
+                                    <span class="trending-tag">#CBLOLPrevia</span>
+                                    <span class="trending-count">512 posts</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Jogadores em destaque -->
+                        <div class="side-widget featured-players">
+                            <div class="widget-header">
+                                <h3>Jogadores em Destaque</h3>
+                                <a href="players.html" class="view-all">Ver todos</a>
+                            </div>
+                            <div class="widget-content">
+                                <div class="player-card">
+                                    <div class="player-image">
+                                        <img src="images/player-1.jpg" alt="Jogador">
+                                    </div>
+                                    <div class="player-info">
+                                        <h4>arT</h4>
+                                        <span class="player-role">Capitão - CS</span>
+                                    </div>
+                                    <div class="player-stats">
+                                        <div class="stat">
+                                            <span class="stat-value">1.15</span>
+                                            <span class="stat-label">Rating</span>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-value">85%</span>
+                                            <span class="stat-label">HS</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="player-card">
+                                    <div class="player-image">
+                                        <img src="images/player-2.jpg" alt="Jogador">
+                                    </div>
+                                    <div class="player-info">
+                                        <h4>khalil</h4>
+                                        <span class="player-role">Rifler - Valorant</span>
+                                    </div>
+                                    <div class="player-stats">
+                                        <div class="stat">
+                                            <span class="stat-value">1.32</span>
+                                            <span class="stat-label">K/D</span>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-value">19.2</span>
+                                            <span class="stat-label">ACS</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
